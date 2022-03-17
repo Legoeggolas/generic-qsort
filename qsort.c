@@ -27,9 +27,9 @@ int _partition(void *arr, int lo, int hi, size_t size, int (*comp)(const void *,
     // put the pivot element at the end of the array
     _swap(arr, pvt, hi - 1, size);
 
-    int index = -1;  // stores the pos after which all elements are larger than our pivot
+    int index = lo - 1;  // stores the pos after which all elements are larger than our pivot
 
-    for (int seeker = 0; seeker < hi - 1; seeker++) {
+    for (int seeker = lo; seeker < hi - 1; seeker++) {
         if (comp((void *)((char *)arr + seeker * size), (void *)((char *)arr + (hi - 1) * size)) <= 0) {
             _swap(arr, index + 1, seeker, size);
             index++;
