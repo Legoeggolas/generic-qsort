@@ -30,6 +30,10 @@ Takes two pointers as arguments (both converted to *const void**)
 # Examples
 Sorting an array of 10 integers in ascending order, using the middle element as the pivot:
 ```c
+#include <stdio.h>
+
+#include "qsort.h"
+
 int compare(const void *a, const void *b) {
     int a_val = *(const int *)a;
     int b_val = *(const int *)b;
